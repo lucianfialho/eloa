@@ -18,7 +18,4 @@ ENV EULA=TRUE \
 # Porta do servidor
 EXPOSE 25565
 
-# Volume para dados persistentes
-VOLUME ["/data"]
-
 # Comando padrão já configurado na imagem base
