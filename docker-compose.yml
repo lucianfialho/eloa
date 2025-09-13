@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  minecraft:
+    build: .
+    container_name: minecraft-eloa
+    environment:
+      EULA: "TRUE"
+      TYPE: VANILLA
+      VERSION: LATEST
+      MEMORY: 2G
+      MAX_MEMORY: 2G
+      SERVER_NAME: "Servidor Eloa"
+      MOTD: "Bem-vindo ao Servidor Eloa!"
+      MAX_PLAYERS: 20
+      DIFFICULTY: normal
+      MODE: survival
+      PVP: "true"
+      VIEW_DISTANCE: 10
+      ENABLE_COMMAND_BLOCK: "true"
+      ONLINE_MODE: "true"
+      SPAWN_PROTECTION: 16
+    ports:
+      - "25565:25565"
+    volumes:
+      - minecraft-data:/data
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+volumes:
+  minecraft-data:

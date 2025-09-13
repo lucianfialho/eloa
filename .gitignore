@@ -1,0 +1,24 @@
+# Minecraft server data
+/data/
+minecraft-data/
+
+# Logs
+*.log
+logs/
+
+# World backups
+*.tar.gz
+*.zip
+backups/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
