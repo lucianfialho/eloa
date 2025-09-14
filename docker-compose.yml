@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  minecraft:
+  minecraft-java:
     build: .
-    container_name: minecraft-eloa
+    container_name: minecraft-eloa-java
     environment:
       EULA: "TRUE"
       TYPE: VANILLA
@@ -23,10 +23,36 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - minecraft-data:/data
+      - minecraft-java-data:/data
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+  minecraft-bedrock:
+    build:
+      context: .
+      dockerfile: Dockerfile.bedrock
+    container_name: minecraft-eloa-bedrock
+    environment:
+      EULA: "TRUE"
+      SERVER_NAME: "Servidor Eloa Bedrock"
+      LEVEL_NAME: "Mundo Eloa"
+      GAMEMODE: survival
+      DIFFICULTY: normal
+      MAX_PLAYERS: 10
+      ONLINE_MODE: "true"
+      ALLOW_CHEATS: "false"
+      VIEW_DISTANCE: 10
+      PLAYER_IDLE_TIMEOUT: 30
+      MAX_THREADS: 8
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - minecraft-bedrock-data:/data
     restart: unless-stopped
     stdin_open: true
     tty: true
 
 volumes:
-  minecraft-data:
+  minecraft-java-data:
+  minecraft-bedrock-data:
