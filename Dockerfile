@@ -2,7 +2,7 @@ FROM itzg/minecraft-bedrock-server:latest
 
 # Configurações do servidor Bedrock
 ENV EULA=TRUE \
-    VERSION=LATEST \
+    VERSION=1.21.101 \
     SERVER_NAME="Servidor Eloa Bedrock" \
     LEVEL_NAME="Mundo Eloa" \
     GAMEMODE=survival \
