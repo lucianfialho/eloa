@@ -13,13 +13,10 @@
   },
   "envVars": {
     "PORT": {
-      "value": "25565"
+      "value": "19132"
     },
     "EULA": {
       "value": "TRUE"
-    },
-    "MEMORY": {
-      "value": "2G"
     }
   }
 }

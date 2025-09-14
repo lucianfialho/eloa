@@ -1,21 +1,24 @@
-FROM itzg/minecraft-server:latest
+FROM itzg/minecraft-bedrock-server:latest
 
-# Configurações do servidor
+# Configurações do servidor Bedrock
 ENV EULA=TRUE \
-    TYPE=VANILLA \
-    VERSION=LATEST \
-    MEMORY=2G \
-    MAX_MEMORY=2G \
-    SERVER_NAME="Servidor Eloa" \
-    MOTD="Bem-vindo ao Servidor Eloa!" \
-    MAX_PLAYERS=20 \
+    SERVER_NAME="Servidor Eloa Bedrock" \
+    LEVEL_NAME="Mundo Eloa" \
+    GAMEMODE=survival \
     DIFFICULTY=normal \
-    MODE=survival \
-    PVP=true \
+    MAX_PLAYERS=10 \
+    ONLINE_MODE=true \
+    ALLOW_CHEATS=false \
     VIEW_DISTANCE=10 \
-    ENABLE_COMMAND_BLOCK=true
+    PLAYER_IDLE_TIMEOUT=30 \
+    MAX_THREADS=8 \
+    LEVEL_TYPE=DEFAULT \
+    LEVEL_SEED="" \
+    DEFAULT_PLAYER_PERMISSION_LEVEL=member \
+    TEXTUREPACK_REQUIRED=false \
+    SERVER_PORT=19132
 
-# Porta do servidor
-EXPOSE 25565
+# Porta padrão do Bedrock
+EXPOSE 19132/udp
 
 # Comando padrão já configurado na imagem base
